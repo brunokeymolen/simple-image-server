@@ -22,18 +22,20 @@ def _disp_login(request, error='', del_cookies=[]):
             response.delete_cookie(c)
     return response
 
+def _disp_root(request):
+    return _disp_images(request)
 
 def _disp_images(request):
     """Display images."""
     params = request.POST
-    is_login = False
-    if 'username' in params and 'userpass' in params:
-        username = params['username']
-        userpass = params['userpass']
-        is_login = _can_login(username, userpass)
-    if 'sid' in request.cookies:
-        sid = request.cookies['sid']
-        is_login = _has_valid_cookie(sid)
+    is_login = True
+    #if 'username' in params and 'userpass' in params:
+    #    username = params['username']
+    #    userpass = params['userpass']
+    #    is_login = _can_login(username, userpass)
+    #if 'sid' in request.cookies:
+    #    sid = request.cookies['sid']
+    #    is_login = _has_valid_cookie(sid)
     if not is_login:
         return _disp_login(request, u'Failur in login!!!')
     image_paths = []
@@ -71,6 +73,8 @@ def _add_routes(config):
     """Add Root information."""
     config.add_route('login', '/login')
     config.add_view(_disp_login, route_name='login')
+    config.add_route('root', '/')
+    config.add_view(_disp_root, route_name='root')
     config.add_route('images', '/images')
     config.add_view(_disp_images, route_name='images')
     config.add_route('logout', '/logout')
