@@ -1,16 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
     <title>Image List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/static/css/image.css">
+    <link rel="stylesheet" type="text/css" href="static/css/image.css">
   </head>
   <body>
-  <!-- <script type="text/javascript" src="/static/js/tosrus/jquery.js"></script> -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/hammerjs/2.0.3/hammer.min.js"></script>
-  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
-  <script type="text/javascript" src="/static/js/tosrus/js/jquery.tosrus.min.all.js"></script>
-  <script type="text/javascript" src="/static/js/imagelist.js"></script>
+  <!-- <script type="text/javascript" src="static/js/tosrus/jquery.js"></script> -->
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+  <!-- <script type="text/javascript" src="http://cdn.jsdelivr.net/hammerjs/2.0.3/hammer.min.js"></script> -->
+  <!-- <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script> -->
+  <!-- <script type="text/javascript" src="static/js/tosrus/js/jquery.tosrus.min.all.js"></script> -->
+  <!--  <script type="text/javascript" src="static/js/imagelist.js"></script> -->
   <script type="text/javascript">
     var _gaq = _gaq || [];
 
@@ -20,6 +21,7 @@
         alert('Viewport Width: ' + width + 'px\nViewport Height: ' + height + 'px');
     }
 
+    /*
     (function() {
       var ga = document.createElement("script");
       ga.type = "text/javascript";
@@ -30,15 +32,15 @@
 
       //showViewportDimensions();
     })();
-
+    */
 
   </script>
 
-  <h1>Photo List 2</h1>
-  <div id="kumalinks" class="kumaimages example thumbs">
+  <h1>Alarms</h1>
+  <div id="kumalinks" class="kumaimages">
     % for i in images:
-      <a href="${i}">
-        <img src="${i}" width="8.5%" height="16%" />
+      <a href="${i['full']}">
+        <img src="${i['thumb']}" width="8.5%" height="16%" />
       </a>
     % endfor
   </div>

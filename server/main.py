@@ -39,13 +39,22 @@ def _disp_images(request):
     #if not is_login:
     #    return _disp_login(request, u'Failure in login!!!')
     image_paths = []
-    for r, d, fs in os.walk(PUBLIC_DIR):
+    for r, d, fs in os.walk(PUBLIC_DIR+"/thumbs_positive"):
         for f in fs:
             _p = os.path.join(r, f)
             _f = _p.replace(PUBLIC_DIR, '').lstrip('/')
-            image_paths.append(os.path.join('images', _f))
 
-    image_paths.sort(reverse=True)
+            print("r", r, "f", f, "_p", _p, "_f", _f, "PUBLIC_DIR", PUBLIC_DIR)
+            full = os.path.join('images', _f.replace("thumbs_positive", "positive"))
+            thumb = os.path.join('images', _f)
+            print("full", full, "thumb", thumb)
+            #image_paths.append(os.path.join('images', _f))
+            image_paths.append({'thumb': thumb, 'full': full})
+
+    #image_paths = dict(sorted(image_paths.items(), key=lambda item: item[0], reverse=True))
+    image_paths =  sorted(image_paths, key=lambda image: image['thumb'], reverse=True)
+
+    #image_paths.sort(reverse=True)
     params = {}
     params['images'] = image_paths
     response = render_to_response(
