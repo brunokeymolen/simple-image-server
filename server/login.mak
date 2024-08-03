@@ -25,9 +25,7 @@
         </div>
         <input type="submit" value="LOGIN">
       </div>
-        <p class="copyright">
-          Copyright © 2015 Shohei Mukai. All Right Reserved.
-        </p>
+
     </form>
   </body>
 </html>

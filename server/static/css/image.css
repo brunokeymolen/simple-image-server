@@ -41,5 +41,14 @@ h1 {
   }
 }
 
+.direntry {
+    font-size: 48px; /* Set the font size to large */
+    color: #333;     /* Optional: Set the text color */
+    font-family: Arial, sans-serif; /* Optional: Set the font family */
+    text-align: center;
+}
 
+.no-underline {
+            text-decoration: none; /* Remove underline */
+        }
 

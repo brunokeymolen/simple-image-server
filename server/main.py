@@ -25,6 +25,31 @@ def _disp_login(request, error='', del_cookies=[]):
 def _disp_root(request):
     return _disp_images(request)
 
+
+def _disp_dirs(request):
+    directories = []
+
+    # os.walk() generates a 3-tuple (dirpath, dirnames, filenames) for each directory
+    for root, dirs, files in os.walk(PUBLIC_DIR+"/thumbs_positive"):
+
+        # We are interested in the directories at the current level only
+        full_dir = PUBLIC_DIR+"/thumbs_positive"
+        directories = [os.path.join(root, d) for d in dirs]
+        directories = [d.replace(full_dir, '').lstrip('/') for d in directories]
+        break  # Stop recursion after the first level
+
+    directories.sort(reverse=True)
+
+    params = {}
+    params['directories'] = directories
+    response = render_to_response(
+        'directories.mak',
+        params,
+        request=request)
+
+    return response
+
+
 def _disp_images(request):
     """Display images."""
     params = request.POST
@@ -61,7 +86,7 @@ def _disp_images(request):
         'images.mak',
         params,
         request=request)
-    response.set_cookie('sid', 'iv')
+    #response.set_cookie('sid', 'iv')
     return response
 
 
@@ -92,6 +117,9 @@ def _add_routes(config):
     config.add_view(_logout, route_name='logout')
     config.add_static_view('static', 'static')
     config.add_static_view('images', PUBLIC_DIR)
+    config.add_route('days', '/days')
+    config.add_view(_disp_dirs, route_name='days')
+
 
 
 def execute():
