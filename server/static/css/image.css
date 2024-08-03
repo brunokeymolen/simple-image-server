@@ -22,22 +22,18 @@ h1 {
   display: block;
 }
 
-/* 1 column for mobile devices */
-@media (max-width: 600px) {
-  .kumaimages a {
+/* Default (2 columns) */
+.kumaimages a {
     flex: 1 1 100%; /* 1 column */
-  }
 }
 
+
 /* 8 columns for desktops */
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .kumaimages a {
     flex: 1 1 calc(12.5% - 10px); /* 8 columns, adjust the -10px to match the gap */
   }
 }
 
-/* Default (2 columns) */
-//.kumaimages a {
-//  flex: 1 1 calc(50% - 10px); /* 2 columns by default */
-//}
+
 

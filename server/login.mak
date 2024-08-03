@@ -4,6 +4,7 @@
     <meta name="apple-mobile-web-app-capable" content="no">
     <link media="only screen and (max-device-width:480px)" rel="stylesheet" type="text/css" href="/static/css/login_smart.css">
     <link media="screen and (min-device-width:481px)" rel="stylesheet" type="text/css" href="/static/css/login.css">
+
     <title>Photo List</title>
   </head>
 

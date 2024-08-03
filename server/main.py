@@ -36,14 +36,16 @@ def _disp_images(request):
     #if 'sid' in request.cookies:
     #    sid = request.cookies['sid']
     #    is_login = _has_valid_cookie(sid)
-    if not is_login:
-        return _disp_login(request, u'Failur in login!!!')
+    #if not is_login:
+    #    return _disp_login(request, u'Failure in login!!!')
     image_paths = []
     for r, d, fs in os.walk(PUBLIC_DIR):
         for f in fs:
             _p = os.path.join(r, f)
             _f = _p.replace(PUBLIC_DIR, '').lstrip('/')
             image_paths.append(os.path.join('images', _f))
+
+    image_paths.sort(reverse=True)
     params = {}
     params['images'] = image_paths
     response = render_to_response(

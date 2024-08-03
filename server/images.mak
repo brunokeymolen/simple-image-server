@@ -1,11 +1,8 @@
 <html>
   <head>
     <title>Image List</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
-    <meta name="apple-mobile-web-app-capable" content="no">
-    <link media="only screen and (max-device-width:480px)" rel="stylesheet" type="text/css" href="/static/css/image_smart.css">
-    <link media="screen and (min-device-width:481px)" rel="stylesheet" type="text/css" href="/static/css/image.css">
-    <link rel="stylesheet" type="text/css" href="/static/js/tosrus/css/jquery.tosrus.all.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/css/image.css">
   </head>
   <body>
   <!-- <script type="text/javascript" src="/static/js/tosrus/jquery.js"></script> -->
@@ -17,6 +14,12 @@
   <script type="text/javascript">
     var _gaq = _gaq || [];
 
+    function showViewportDimensions() {
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        alert('Viewport Width: ' + width + 'px\nViewport Height: ' + height + 'px');
+    }
+
     (function() {
       var ga = document.createElement("script");
       ga.type = "text/javascript";
@@ -24,10 +27,14 @@
       ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(ga, s);
+
+      //showViewportDimensions();
     })();
+
+
   </script>
 
-  <h1>Photo List</h1>
+  <h1>Photo List 2</h1>
   <div id="kumalinks" class="kumaimages example thumbs">
     % for i in images:
       <a href="${i}">
