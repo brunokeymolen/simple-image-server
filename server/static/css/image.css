@@ -4,21 +4,40 @@ h1 {
   text-align: center;
 }
 
-.kumaimagesOLD {
-  text-align: center;
-}
+
 
 .kumaimages {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px; /* Optional: Adjust the gap between images */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the gap between images */
 }
+
 .kumaimages a {
-      flex: 1 1 calc(100% - 10px); /* 2 columns, adjust the -10px to match the gap */
-      box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 .kumaimages img {
-      width: 100%;
-      height: auto;
-      display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
+
+/* 1 column for mobile devices */
+@media (max-width: 600px) {
+  .kumaimages a {
+    flex: 1 1 100%; /* 1 column */
+  }
+}
+
+/* 8 columns for desktops */
+@media (min-width: 1000px) {
+  .kumaimages a {
+    flex: 1 1 calc(12.5% - 10px); /* 8 columns, adjust the -10px to match the gap */
+  }
+}
+
+/* Default (2 columns) */
+//.kumaimages a {
+//  flex: 1 1 calc(50% - 10px); /* 2 columns by default */
+//}
+
