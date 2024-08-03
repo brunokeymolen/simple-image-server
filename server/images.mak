@@ -16,8 +16,6 @@
   <script type="text/javascript" src="/static/js/imagelist.js"></script>
   <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(["_setAccount", "UA-5722599-14"]);
-    _gaq.push(["_trackPageview"]);
 
     (function() {
       var ga = document.createElement("script");
