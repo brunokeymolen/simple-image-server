@@ -1,5 +1,7 @@
 # Simple Image File Server
 
+Bruno Keymolen: Adapted to the specific needs for a private project. So might be less usefull to others.
+
 ## ABOUT 
 
 This system supports simple image files viewer.  
