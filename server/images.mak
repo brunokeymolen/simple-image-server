@@ -3,7 +3,7 @@
   <head>
     <title>Image List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="static/css/image.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/image.css">
   </head>
   <body>
   <!-- <script type="text/javascript" src="static/js/tosrus/jquery.js"></script> -->

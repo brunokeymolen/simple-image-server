@@ -34,7 +34,7 @@
   <div id="brunodir" class="brunodirs">
     <p class="direntry">
     % for d in directories:
-      <a href="${d}" class="no-underline">
+      <a href="dir/${d}" class="no-underline">
         ${d}<br>
       </a>
     % endfor
