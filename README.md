@@ -1,6 +1,9 @@
 # Simple Image File Server
 
-Bruno Keymolen: Adapted to the specific needs for a private project. So might be less usefull to others.
+<span style="color: red;">
+Bruno Keymolen: 
+# Adapted to the specific needs for a private tryout project. So might be less or *not* usefull to others.
+</span>
 
 ## ABOUT 
 
