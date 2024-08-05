@@ -3,7 +3,7 @@
   <head>
     <title>Image List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../static/css/image.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/image.css?v=1.0">
   </head>
   <body>
   <!-- <script type="text/javascript" src="static/js/tosrus/jquery.js"></script> -->
@@ -20,6 +20,9 @@
         var height = window.innerHeight;
         alert('Viewport Width: ' + width + 'px\nViewport Height: ' + height + 'px');
     }
+    (function() {
+      //showViewportDimensions();
+    })();
 
     /*
     (function() {
